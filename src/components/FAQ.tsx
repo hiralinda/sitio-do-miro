@@ -65,7 +65,47 @@ const FAQ: React.FC<FAQProps> = ({ id }) => {
       answer:
         "A capacidade do Sítio do Miro varia de acordo com o tipo de evento e a configuração do espaço. Podemos acomodar eventos de diferentes tamanhos, desde pequenas reuniões até grandes festas.",
     },
-    // ... (other FAQ items remain the same)
+    {
+      question: "O Sítio do Miro oferece serviços de alimentação e bebidas?",
+      answer:
+        "Sim, oferecemos serviços de buffet e bar, com opções personalizadas para atender às suas necessidades e preferências.",
+    },
+    {
+      question: "O Sítio do Miro possui estacionamento próprio?",
+      answer:
+        "Sim, contamos com um amplo estacionamento para acomodar os veículos dos seus convidados.",
+    },
+    {
+      question: "O Sítio do Miro é acessível para pessoas com deficiência?",
+      answer:
+        "Sim, o Sítio do Miro possui instalações acessíveis para pessoas com deficiência.",
+    },
+    {
+      question:
+        "O Sítio do Miro possui áreas externas para eventos ao ar livre?",
+      answer:
+        "Sim, oferecemos áreas externas como jardins, terraços e áreas verdes para eventos ao ar livre.",
+    },
+    {
+      question: "O Sítio do Miro possui equipamentos de som e iluminação?",
+      answer:
+        "Sim, podemos fornecer equipamentos de som e iluminação para o seu evento, de acordo com suas necessidades.",
+    },
+    {
+      question: "Como posso reservar o Sítio do Miro para um evento?",
+      answer:
+        'Para reservar o Sítio do Miro, entre em contato conosco através do <a href="tel:+5511999999999">número de telefone</a> ou <a href="mailto:email@exemplo.com">e-mail</a>. Podemos agendar uma visita para conhecer o espaço e discutir os detalhes do seu evento.',
+    },
+    {
+      question: "O Sítio do Miro oferece serviços de decoração?",
+      answer:
+        "Sim, podemos oferecer serviços de decoração para personalizar o espaço e criar o ambiente ideal para o seu evento.",
+    },
+    {
+      question: "O Sítio do Miro possui políticas de cancelamento e reembolso?",
+      answer:
+        "Sim, contamos com políticas de cancelamento e reembolso claras. Consulte-nos para obter mais detalhes.",
+    },
   ];
 
   const toggleFAQ = (index: number) => {
