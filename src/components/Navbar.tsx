@@ -25,7 +25,7 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       className="fixed top-0 left-0 w-full z-50 bg-[#E5ECE0] p-2 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
-        <img src="./logo.png" alt="Logo" className="w-50 h-10"></img>
+        <img src="/sitio-do-miro/logo.png" alt="Logo" className="w-50 h-10"></img>
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
