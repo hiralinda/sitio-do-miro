@@ -1,11 +1,15 @@
 import React, { useRef, useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { ChevronRight } from "lucide-react";
+import { motion, Variants } from "framer-motion";
+
+// Define types for the intersection observer options
+interface IntersectionObserverOptions {
+  threshold: number;
+}
 
 // Custom hook for intersection observer
-const useInView = (options) => {
-  const ref = useRef(null);
-  const [isInView, setIsInView] = useState(false);
+const useInView = (options: IntersectionObserverOptions): [React.RefObject<HTMLElement>, boolean] => {
+  const ref = useRef<HTMLElement>(null);
+  const [isInView, setIsInView] = useState<boolean>(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
@@ -26,14 +30,19 @@ const useInView = (options) => {
   return [ref, isInView];
 };
 
-const AboutUs = ({ id }) => {
+// Define props interface for AboutUs component
+interface AboutUsProps {
+  id: string;
+}
+
+const AboutUs: React.FC<AboutUsProps> = ({ id }) => {
   const text = "Seu refúgio em Embu-Guaçu";
   const description =
     "Procurando por um lugar para relaxar e se divertir com a família e os amigos? No Sítio do Miro você encontra tudo isso e muito mais! Nossa completa infraestrutura, com piscina, churrasqueira, campo de futebol e área de jogos, garante momentos inesquecíveis em meio à natureza. A poucos quilômetros de São Paulo, o Sítio do Miro é a opção perfeita para quem busca tranquilidade e aventura.";
 
   const [ref, isInView] = useInView({ threshold: 0.1 });
 
-  const fadeInUp = {
+  const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -45,7 +54,7 @@ const AboutUs = ({ id }) => {
   return (
     <section
       id={id}
-      ref={ref}
+      ref={ref as React.RefObject<HTMLElement>}
       className="relative py-10 overflow-hidden min-h-screen flex items-center bg-[#E5ECE0]">
       {/* Content */}
       <motion.div

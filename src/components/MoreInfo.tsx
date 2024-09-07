@@ -1,9 +1,27 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Box, Briefcase, Compass } from "lucide-react";
+import { Box, Briefcase, Compass, LucideIcon } from "lucide-react";
 
-const MoreInfo = ({ id }) => {
-  const information = [
+// Define types for detail information
+interface Detail {
+  topic: string;
+  description: string;
+}
+
+// Define types for the information item
+interface InformationItem {
+  title: string;
+  icon: LucideIcon; // `LucideIcon` type is used for icons from `lucide-react`
+  details: Detail[];
+}
+
+// Define types for component props
+interface MoreInfoProps {
+  id: string;
+}
+
+const MoreInfo: React.FC<MoreInfoProps> = ({ id }) => {
+  const information: InformationItem[] = [
     {
       title: "O que oferecemos",
       icon: Box,
@@ -71,7 +89,7 @@ const MoreInfo = ({ id }) => {
 
   return (
     <div id={id} className="more-info bg-[#E5ECE0] py-10">
-      <div className="max-w-7xl mx-auto md:px-6 sm:px-6 ">
+      <div className="max-w-7xl mx-auto ">
         {information.map((item, index) => (
           <motion.div
             key={index}
@@ -79,7 +97,7 @@ const MoreInfo = ({ id }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.8 }}
-            className="mb-10">
+            className="mb-10 md:px-6 sm:px-6">
             <div className="flex items-center mb-8">
               <item.icon className="w-10 h-10 mr-4 text-[#63BB4B]" />
               <h2 className="text-3xl font-bold text-green-800">

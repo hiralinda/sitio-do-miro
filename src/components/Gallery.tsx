@@ -6,11 +6,17 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 
-const Gallery = ({ id }) => {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [currentIndex, setCurrentIndex] = useState(null);
+// Define types for component props
+interface GalleryProps {
+  id: string;
+}
 
-  const images = [
+
+const Gallery: React.FC<GalleryProps> = ({ id }) => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+
+  const images: string[] = [
     "/imgs/img1.jpg",
     "/imgs/img2.jpg",
     "/imgs/img3.jpg",
@@ -19,7 +25,7 @@ const Gallery = ({ id }) => {
     "/imgs/img6.jpg",
   ];
 
-  const openImage = (image, index) => {
+  const openImage = (image: string, index: number) => {
     setSelectedImage(image);
     setCurrentIndex(index);
   };
@@ -47,7 +53,7 @@ const Gallery = ({ id }) => {
     <div id={id} className="gallery bg-[#E5ECE0] pb-10 px-4 sm:px-6">
       <div className="container mx-auto">
         <motion.h2
-          className="text-3xl font-bold text-center mb-12  text-green-800"
+          className="text-3xl font-bold text-center mb-12 text-green-800"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}>

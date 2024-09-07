@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { X } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -10,7 +9,15 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 
-const CelebrationItem = ({ src, title, description, delay, onClick }) => {
+interface CelebrationItemProps {
+  src: string;
+  title: string;
+  description: string;
+  delay: number;
+  onClick: () => void;
+}
+
+const CelebrationItem: React.FC<CelebrationItemProps> = ({ src, title, delay, onClick }) => {
   const { ref, inView } = useInView({
     triggerOnce: false,
     threshold: 0.1,
@@ -41,14 +48,24 @@ const CelebrationItem = ({ src, title, description, delay, onClick }) => {
   );
 };
 
-const CelebrateSection = ({ id }) => {
-  const [selectedItem, setSelectedItem] = useState(null);
-  const { ref, inView } = useInView({
+interface CelebrateSectionProps {
+  id: string;
+}
+
+interface CelebrationItem {
+  src: string;
+  title: string;
+  description: string;
+}
+
+const CelebrateSection: React.FC<CelebrateSectionProps> = ({ id }) => {
+  const [selectedItem, setSelectedItem] = useState<CelebrationItem | null>(null);
+  const { ref } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
-  const celebrations = [
+  const celebrations: CelebrationItem[] = [
     {
       src: "https://images.unsplash.com/photo-1481066717861-4775e000c88a?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       title: "Casamentos",
@@ -95,6 +112,7 @@ const CelebrateSection = ({ id }) => {
               key={index}
               src={item.src}
               title={item.title}
+              description={item.description}
               delay={index * 0.2 + 0.4}
               onClick={() => setSelectedItem(item)}
             />

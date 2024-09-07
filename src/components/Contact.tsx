@@ -1,15 +1,24 @@
 import React from "react";
 import {
   FaFacebookF,
-  FaTwitter,
-  FaLinkedinIn,
   FaInstagram,
   FaWhatsapp,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { IconType } from "react-icons";
 
-const Contact = ({ id = "contact" }) => {
-  const socialLinks = [
+interface ContactProps {
+  id?: string;
+}
+
+interface SocialLink {
+  icon: IconType;
+  href: string;
+  color: string;
+}
+
+const Contact: React.FC<ContactProps> = ({ id = "contact" }) => {
+  const socialLinks: SocialLink[] = [
     {
       icon: FaFacebookF,
       href: "https://www.facebook.com/sitiodomiro",
@@ -52,7 +61,7 @@ const Contact = ({ id = "contact" }) => {
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
-                allowFullScreen=""
+                allowFullScreen={true}
                 loading="lazy"
                 title="Google Maps"></iframe>
             </motion.div>
