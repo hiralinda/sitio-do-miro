@@ -17,12 +17,12 @@ const Gallery: React.FC<GalleryProps> = ({ id }) => {
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
   const images: string[] = [
-    "/imgs/img1.jpg",
-    "/imgs/img2.jpg",
-    "/imgs/img3.jpg",
-    "/imgs/img4.jpg",
-    "/imgs/img5.jpg",
-    "/imgs/img6.jpg",
+    "./imgs/img1.jpg",
+    "./imgs/img2.jpg",
+    "./imgs/img3.jpg",
+    "./imgs/img4.jpg",
+    "./imgs/img5.jpg",
+    "./imgs/img6.jpg",
   ];
 
   const openImage = (image: string, index: number) => {
