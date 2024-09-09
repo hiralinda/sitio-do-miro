@@ -86,10 +86,6 @@ const Hero = () => {
         </motion.a>
       </motion.div>
 
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-green-800 to-transparent opacity-30 z-10" />
-      <div className="absolute top-0 left-0 w-32 h-32 bg-yellow-400 rounded-full blur-3xl opacity-20 z-10" />
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-green-400 rounded-full blur-3xl opacity-20 z-10" />
     </section>
   );
 };

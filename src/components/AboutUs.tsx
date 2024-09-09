@@ -86,25 +86,25 @@ const AboutUs: React.FC<AboutUsProps> = ({ id }) => {
           {/* Image collage */}
           <motion.div className="grid grid-cols-2 gap-4" variants={fadeInUp}>
             <motion.img
-              src="/sitio-do-miro/imgs/about1.jpg"
+              src="/imgs/about1.jpg"
               alt="Sítio do Miro 1"
               className="w-full h-64 object-cover rounded-lg shadow-lg"
               variants={fadeInUp}
             />
             <motion.img
-              src="/sitio-do-miro/imgs/about2.jpg"
+              src="/imgs/about2.jpg"
               alt="Sítio do Miro 2"
               className="w-full h-48 object-cover rounded-lg shadow-lg mt-8"
               variants={fadeInUp}
             />
             <motion.img
-              src="/sitio-do-miro/imgs/about3.jpg"
+              src="/imgs/about3.jpg"
               alt="Sítio do Miro 3"
               className="w-full h-48 object-cover rounded-lg shadow-lg"
               variants={fadeInUp}
             />
             <motion.img
-              src="/sitio-do-miro/imgs/about4.jpg"
+              src="/imgs/about4.jpg"
               alt="Sítio do Miro 4"
               className="w-full h-64 object-cover rounded-lg shadow-lg -mt-8"
               variants={fadeInUp}

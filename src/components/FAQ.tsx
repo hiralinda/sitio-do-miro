@@ -34,7 +34,8 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, toggle }) =
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             className="overflow-hidden bg-[#E5ECE0] rounded-b-lg">
-            <div className="p-4 text-[#6C6C6C]">{answer}</div>
+            {/* Use dangerouslySetInnerHTML to parse the answer as HTML */}
+            <div className="p-4 text-[#6C6C6C]" dangerouslySetInnerHTML={{ __html: answer }} />
           </motion.div>
         )}
       </AnimatePresence>
@@ -94,7 +95,7 @@ const FAQ: React.FC<FAQProps> = ({ id }) => {
     {
       question: "Como posso reservar o Sítio do Miro para um evento?",
       answer:
-        'Para reservar o Sítio do Miro, entre em contato conosco através do <a href="tel:+5511999999999">número de telefone</a> ou <a href="mailto:email@exemplo.com">e-mail</a>. Podemos agendar uma visita para conhecer o espaço e discutir os detalhes do seu evento.',
+        'Para reservar o Sítio do Miro, entre em contato conosco através do nosso Whatsapp ou email. Podemos agendar uma visita para conhecer o espaço e discutir os detalhes do seu evento.',
     },
     {
       question: "O Sítio do Miro oferece serviços de decoração?",
